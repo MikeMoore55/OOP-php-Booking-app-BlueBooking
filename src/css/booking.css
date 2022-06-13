@@ -1,3 +1,82 @@
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e4e3e3;
+    height: 100%;
+    width: auto;
+}
+
+.header{
+    display: flex;
+}
+
+.squares{
+    width: 30%;
+}
+
+h1{
+    font-family: 'Fascinate', cursive;
+    font-size: 1.7em;
+    text-shadow: rgb(91, 91, 91) 5px 5px 10px;
+}
+
+
+h1 span{
+    font-family: 'Fascinate', cursive;
+    color: #185E95;
+    font-size: 1.9em;
+}
+
+.booking-form{
+    position: absolute;
+    width: 90%;
+    top: 25%;
+    left: 5%;
+    border: solid 3px black;
+    padding: 5% 7% 5% 7%;
+    box-shadow: 5px 5px 7px 0px rgba(91,91,91);
+}
+
+.booking-form label{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1.2em;
+}
+
+.booking-form .book-btn{
+    position: relative;
+    width: 50%;
+    left: 25%;
+    background-color: #185E95;
+    border: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1.2em;
+    box-shadow: 5px 5px 7px 0px rgba(91,91,91);
+}
+
+.booking-form .book-btn:active{
+    transform: scale(0.9);
+    box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
+}
+
+.booking-form .text-input{
+    width: 100%;
+    border: solid 2px black;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 7px 0px rgba(91,91,91);
+    margin-bottom: 3%;
+}
+
+.booking-form .date-input{
+    width: 100%;
+    border: solid 2px black;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 7px 0px rgba(91,91,91);
+    margin-bottom: 3%;
+}
+
 /* color palette
 https://coolors.co/palette/90c1e3-000055-2d71ac-000000-185e95-000000
 */

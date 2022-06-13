@@ -1,10 +1,11 @@
 <?php
+/* this class is the "setup" of each hotel */
 
     class Hotel{
         public $name;
         public $rate;
         public $description;
-        public $pool;
+        public $pool; 
         public $wifi;
         public $spa;
         public $restaurant;

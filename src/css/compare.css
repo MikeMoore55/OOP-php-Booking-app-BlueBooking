@@ -1,3 +1,15 @@
+
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e4e3e3;
+    height: 100%;
+    width: auto;
+}
+
 /* color palette
 https://coolors.co/palette/90c1e3-000055-2d71ac-000000-185e95-000000
 */

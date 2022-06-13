@@ -1,3 +1,6 @@
+
+<!-- LANDING PAGE -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +30,10 @@
             <p class="bottom-text">
                 The Test and Bluest online Booking Platform!</p>
         </div>
-        
-        <img src="./src/images/blue-squares.png" class="squares">
 
-        <form method="post" action="./src/pages/booking.page.php" class="booking-form">
+        <img src="./src/images/blue-squares.png" class="squares">
+        <!-- button to take user to booking page -->
+        <form method="POST" action="./src/pages/booking.page.php" class="booking-form">
             <input type="submit" name="submit" value="Make a Booking" class="booking-btn">
         </form>
     </main>

@@ -1,3 +1,6 @@
+
+<!-- BOOKING-PAGE -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +25,7 @@
         <h1><span>Blue</span>Booking</h1>
     </header>
     <main>
+    <!-- using GET so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
     <form class="booking-form" method="GET" action="../pages/display.php">
             <label for="firstName" class="name">Name:</label>
             <br>

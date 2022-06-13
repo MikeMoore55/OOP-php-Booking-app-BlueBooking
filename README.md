@@ -1,2 +1,2 @@
 # OOP-php-Booking-app
- a booking application made with php
+This is BlueBooking, a online booking Application made with php

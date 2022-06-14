@@ -33,10 +33,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- css stylesheet -->
-    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="../css/booking.css">   
 </head>
 <body>
     <header class="header">
@@ -46,36 +44,41 @@
     <main>
     <!-- using GET so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
     <form class="booking-form" method="GET" action="../pages/display.php">
-            <label for="firstName" class="name">Name:</label>
-            <br>
-            <input type="text" name="firstName" class="text-input">
-            <br>
-            <label for="lastName" class="surname">Surname:</label>
-            <br>
-            <input type="text" name="lastName" class="text-input">
-            <br>
-            <label for="email" class="email">E-mail:</label>
-            <br>
-            <input type="email" name="email" class="text-input">
-            <br>
-            <label for="selection" class="selection">Where would you like to stay:</label>
-            <br>
-            <select class="form-select form-select-lg mb-3 select-override" aria-label=".form-select-lg example">
-                <?php
+            <div class="user-name">
+                <label for="firstName" class="name">Name:</label>
+                <br>
+                <input type="text" name="firstName" class="text-input">
+                <br>
+                <label for="lastName" class="surname">Surname:</label>
+                <br>
+                <input type="text" name="lastName" class="text-input">
+            </div>
+            <div class="user-email">
+                <label for="email" class="email">E-mail:</label>
+                <br>
+                <input type="email" name="email" class="text-input">
+            </div>
+            <div class="user-selection">
+                <label for="selection" class="selection">Where would you like to stay:</label>
+                <br>
+                <select class="form-select">
+                    <?php
+                    
+                    echo($option);
                 
-                echo($option);
+                    ?>
+                </select>
+            </div>
             
-                ?>
-            </select>
-            <br>
-            <label for="checkIn" class="date">Check-In:</label>
-            <br>
-            <input type="date" name="checkIn" class="date-input">
-            <br>
-            <label for="checkOut" class="date">Check-Out:</label>
-            <br>
-            <input type="date" name="checkOut" class="date-input">
-            <br>
+            <div class="check-in-out">
+                <label for="checkIn" class="date">Check-In:</label>
+                <br>
+                <input type="date" name="checkIn" class="date-input">
+                <br>
+                <label for="checkOut" class="date">Check-Out:</label>
+                <br>
+                <input type="date" name="checkOut" class="date-input">
+            </div>
             <br>
             <input type="submit" name="submit" value="Submit" class="book-btn"> 
         </form>

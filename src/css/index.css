@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #e4e3e3;
+    background-color: #f0eded;
     height: 100%;
     width: auto;
 }
@@ -14,6 +14,14 @@ body{
     width: 90%;
     top: 2%;
     left: 5%;
+}
+
+.logo{
+    display: block;
+}
+
+.side-content{
+    display: block;
 }
 
 .intro h1{
@@ -53,7 +61,7 @@ body{
 }
 
 .booking-form{
-    position: absolute;
+    position: fixed;
     width: 60%;
     left: 20%;
     bottom: 5%;
@@ -75,14 +83,177 @@ body{
     box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
 }
 
+
 @media (min-width: 490px) {
-
-      .squares{
-        display: none;
-      }
-
+    .intro h1{
+        font-size: 2.5em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro h1 span{
+        font-size: 3.0em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .top-text{
+        font-size: 1.7em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .bottom-text{
+        font-size: 1.6em;    
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .squares{
+        width: 90%;
+        left: 5%;
+        top: 25%;
+    }
+    
+    .booking-form{
+        bottom: 4%;
+    }
+    
+    .booking-btn{
+        font-size: 1.7em;
+        padding: 2% 2% 2% 2%;
+        box-shadow: rgb(91, 91, 91) 7px 7px 9px 0px;
+    }
+    
+    .booking-btn:active{
+        transform: scale(0.9);
+        box-shadow: 5px 5px 7.5px 0px rgb(75, 74, 74);
+    }
 }
 
+@media (min-width: 490px) and (max-height: 490px){
+    .logo{
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 10%;
+        display: flex;
+    }
+
+    .intro{
+        position: relative;
+        margin-top: 5%;
+    }
+
+    .intro h1{
+        text-align: center;
+        font-size: 1.5em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro h1 span{
+        font-size: 1.5em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .top-text{
+        font-size: 1.2em;
+        text-align: center;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .bottom-text{
+        font-size: 1.1em;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .squares{
+        position: relative;
+        width: 30%;
+    }
+    
+    .booking-form{
+        margin-top: 10%;
+    }
+    
+    .booking-btn{
+        font-size: 1.2em;
+        padding: 2% 2% 2% 2%;
+        box-shadow: rgb(91, 91, 91) 7px 7px 9px 0px;
+    }
+    
+    .booking-btn:active{
+        transform: scale(0.9);
+        box-shadow: 5px 5px 7.5px 0px rgb(75, 74, 74);
+    }
+} 
+
+@media (min-width: 1000px) {
+
+    .logo{
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 10%;
+        display: flex;
+    }
+
+    .intro{
+        position: relative;
+        margin-top: 0%;
+    }
+
+    .intro h1{
+        text-align: center;
+        font-size: 2.5em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro h1 span{
+        font-size: 3.0em;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .top-text{
+        font-size: 1.7em;
+        text-align: center;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .intro .bottom-text{
+        font-size: 1.6em;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        text-shadow: rgb(91, 91, 91) 7px 7px 14px;
+    }
+    
+    .squares{
+        position: relative;
+        left: 0%;
+        width: 45%;
+    }
+    
+    .booking-form{
+        position: relative;
+        width: 40%;
+        left: 30%;
+        right: 30%;
+        margin-top: 10%;
+    }
+    
+    .booking-btn{
+        font-size: 1.4em;
+        padding: 2% 2% 2% 2%;
+        box-shadow: rgb(91, 91, 91) 7px 7px 9px 0px;
+    }
+    
+    .booking-btn:active{
+        transform: scale(0.9);
+        box-shadow: 5px 5px 7.5px 0px rgb(75, 74, 74);
+    }
+}
 
 /* color palette
 https://coolors.co/palette/90c1e3-000055-2d71ac-000000-185e95-000000

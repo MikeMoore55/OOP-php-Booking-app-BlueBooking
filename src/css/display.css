@@ -1,0 +1,10 @@
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f0eded;
+    height: 100%;
+    width: auto;
+}

@@ -2,7 +2,7 @@
 <!-- BOOKING-PAGE -->
 
 <?php
-
+ 
     include "../includes/HotelInitialization.inc.php";
 
     $hotelList = json_encode($hotelListArray);
@@ -10,11 +10,11 @@
     file_put_contents("hotelList.json", $hotelList);
 
     $hotelOptions = file_get_contents("hotelList.json");
-    $hotelOptions = json_decode($hotelOptions, TRUE); 
+    $hotelOptions = json_decode($hotelOptions, TRUE);
 
-    foreach ($hotelOptions as $hotelS => $value) {
-        $option .= "<option class='hotel-option'>".$value["name"]."</option>" ;
-    };  
+    foreach ($hotelOptions as $hotels => $value) {
+        $option .= "<option>".$value["name"]."</option>" ;
+    };   
 
 ?>
 
@@ -61,15 +61,15 @@
             <div class="user-selection">
                 <label for="selection" class="selection">Where would you like to stay:</label>
                 <br>
-                <select class="form-select">
+                <select name="selection" class="form-select">
                     <?php
                     
-                    echo($option);
+                        echo($option);
                 
                     ?>
                 </select>
             </div>
-            
+
             <div class="check-in-out">
                 <label for="checkIn" class="date">Check-In:</label>
                 <br>
@@ -80,7 +80,7 @@
                 <input type="date" name="checkOut" class="date-input">
             </div>
             <br>
-            <input type="submit" name="submit" value="Submit" class="book-btn"> 
+            <input type="submit" name="save" value="Save" class="book-btn"> 
         </form>
     </main>
 </body>

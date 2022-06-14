@@ -11,11 +11,11 @@
 
     $hotelOptions = file_get_contents("hotelList.json");
     $hotelOptions = json_decode($hotelOptions, TRUE);
-
+    
     foreach ($hotelOptions as $hotels => $value) {
         $option .= "<option>".$value["name"]."</option>" ;
-    };   
-
+    }; 
+    
 ?>
 
 <!DOCTYPE html>

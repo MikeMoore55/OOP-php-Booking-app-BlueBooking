@@ -3,7 +3,7 @@
     $hotelOptions = file_get_contents("hotelList.json");
     $hotelOptions = json_decode($hotelOptions, TRUE);
 
-    $array = array_values($hotelOptions);
+    
    
 
 
@@ -12,21 +12,34 @@
         $name = $_GET['firstName'];
         $surname = $_GET['lastName'];
         $email = $_GET['email'];
-        $selection = $_GET['selection'];
-
-        foreach ($hotelOptions as $hotels => $value) {
-             ;
-        };
-
-        $selectedHotel = $hotelOptions["name"]["$selection"];
         $checkIn = $_GET['checkIn'];
         $checkOut = $_GET['checkOut'];
-        $dayDifference = date_diff(date_create($checkIn), date_create($checkOut));
-        $amountOfDays = $dayDifference->format('%a days');
-        $totalCosts = $amountOfDays * $selectedHotel['Rate']; 
+        $selection = $_GET['selection'];
 
-        $return .= "<p>".$selectedHotel."</p>";
-        $key = array_search($selection, $array);
+
+        $fullName .= $name." ".$surname;
+        
+        $dayDifference = date_diff(date_create($checkIn), date_create($checkOut));
+        $amountOfDays = $dayDifference->format('%a');
+        
+
+        $hotelArray = array();
+
+        foreach ($hotelOptions as $Hotel => $value) {
+            $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"]);
+        };
+
+        $selectedHotel = $hotelArray["$selection"];
+        $totalCosts = $amountOfDays * $selectedHotel["rate"]; 
+      
+        $display .= "
+        <div>
+            <p>User: ".$fullName."</p>
+            <p>Hotel: ".$selection."</p>
+            <p>Days: ".$amountOfDays."</p>
+            <p>Rate: R".$selectedHotel["rate"]."/day</p>
+            <p>Total: R".$totalCosts."</p>           
+        </div>";
     }
 
 ?>
@@ -49,10 +62,9 @@
     <!-- css stylesheet -->
     <link rel="stylesheet" href="../css/booking.css"> 
 </head>
-<body>
+<body>    
     <?php 
-        print_r($array);
-        print_r($key);
+        echo $display;
     ?>
 </body>
 </html>

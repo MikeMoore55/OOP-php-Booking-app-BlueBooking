@@ -75,6 +75,14 @@ body{
     box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
 }
 
+@media (min-width: 490px) {
+
+      .squares{
+        display: none;
+      }
+
+}
+
 
 /* color palette
 https://coolors.co/palette/90c1e3-000055-2d71ac-000000-185e95-000000

@@ -1,7 +1,7 @@
 <?php
 /* here we create a populated array using the setup from the HotelClass.class.php */
     
-    require "../classes/Hotels.class.php";
+    require "../classes/HotelClass.class.php";
 
     $hotelListArray = [
         new Hotel("Alveston Manor Boutique Hotel & Spa", 1500, 4, "Cosy rooms with free Wi-Fi & TVs in a sophisticated hotel featuring a spa & a restaurant.", true, true, true, true, true),

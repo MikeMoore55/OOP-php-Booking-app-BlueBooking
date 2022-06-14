@@ -1,6 +1,23 @@
 
 <!-- BOOKING-PAGE -->
 
+<?php
+
+    include "../includes/HotelInitialization.inc.php";
+
+    $hotelList = json_encode($hotelListArray);
+
+    file_put_contents("hotelList.json", $hotelList);
+
+    $hotelOptions = file_get_contents("hotelList.json");
+    $hotelOptions = json_decode($hotelOptions, TRUE); 
+
+    foreach ($hotelOptions as $hotelS => $value) {
+        $option .= "<option class='hotel-option'>".$value["name"]."</option>" ;
+    };  
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +33,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- css stylesheet -->
     <link rel="stylesheet" href="../css/booking.css">
 </head>
@@ -41,11 +60,11 @@
             <br>
             <label for="selection" class="selection">Where would you like to stay:</label>
             <br>
-            <select name="selection">
+            <select class="form-select form-select-lg mb-3 select-override" aria-label=".form-select-lg example">
                 <?php
                 
-                    echo($options);
-                
+                echo($option);
+            
                 ?>
             </select>
             <br>

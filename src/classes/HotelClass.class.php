@@ -4,6 +4,7 @@
     class Hotel{
         public $name;
         public $rate;
+        public $rating;
         public $description;
         public $pool; 
         public $wifi;
@@ -11,10 +12,11 @@
         public $restaurant;
         public $childFriendly;
 
-        function __construct($name, $rate, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
+        function __construct($name, $rate, $rating, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
         {
             $this->name = $name; 
             $this->rate = $rate;
+            $this->rating = $rating;
             $this->description = $description;
             $this->pool = $pool;
             $this->wifi = $wifi;
@@ -29,6 +31,10 @@
 
         function get_rate(){
             return $this->rate;
+        }
+
+        function get_rating(){
+            return $this->rating;
         }
 
         function get_description(){

@@ -2,26 +2,21 @@
 <!-- BOOKING-PAGE -->
 
 <?php
+    session_start();
+
     require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
 
-    if (!isset($_SESSION['Hotel'])) {
-        $_SESSION['Hotel'] = [];
+    initialize();
 
-        initialize();
+    $hotelOptions = file_get_contents("hotelList.json");
 
-        $hotelOptions = file_get_contents("hotelList.json");
-
-        $_SESSION['Hotel'] = json_decode($hotelOptions, true);
-        
-        $hotelOptions = $_SESSION['Hotel'];
-        
-    }
+    $hotelOptions = json_decode($hotelOptions, true);
 
      /* loop through the array to make select option based on the name */
     foreach ($hotelOptions as $hotels => $value) {
         $option .= "<option>".$value["name"]."</option>" ;
-    };
-    
+    }; 
+  
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +45,8 @@
     <main>
     <!-- using "GET" so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
     <form class="booking-form" method="GET" action="../pages/display.php">
+            <?php
+            ?>
             <div class="user-name">
                 <label for="firstName" class="name">Name:</label>
                 <br>
@@ -63,6 +60,7 @@
                 <label for="email" class="email">E-mail:</label>
                 <br>
                 <input type="email" name="email" class="text-input">
+                
             </div>
             <div class="user-selection">
                 <label for="selection" class="selection">Where would you like to stay:</label>
@@ -77,6 +75,7 @@
             </div>
 
             <div class="check-in-out">
+                
                 <label for="checkIn" class="date">Check-In:</label>
                 <br>
                 <input type="date" name="checkIn" class="date-input">

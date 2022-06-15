@@ -41,6 +41,10 @@ h1 span{
     box-shadow: 5px 5px 7px 0px rgba(91,91,91);
 }
 
+.booking-form p{
+    color: red;
+}
+
 .booking-form label{
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-size: 1.2em;

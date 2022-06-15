@@ -31,13 +31,13 @@
                 <p class="bottom-text">
                     The Best and Bluest online Booking Platform!
                 </p>
+                <!-- button to take user to booking page -->
                 <form method="POST" action="./src/pages/booking.page.php" class="booking-form">
                 <input type="submit" name="submit" value="Make a Booking" class="booking-btn">
                 </form>
             </div>
         </div>
 
-        <!-- button to take user to booking page -->
         
     </main>
 </body>

@@ -1,14 +1,14 @@
-<?php
 
+<!-- DISPLAY-PAGE! -->
+
+<?php
+    /*MM - make into method */
     $hotelOptions = file_get_contents("hotelList.json");
     $hotelOptions = json_decode($hotelOptions, TRUE);
 
-    
-   
-
-
     if (isset($_GET['save'])) {
 
+        /* variables from form */
         $name = $_GET['firstName'];
         $surname = $_GET['lastName'];
         $email = $_GET['email'];
@@ -18,17 +18,18 @@
 
 
         $fullName .= $name." ".$surname;
-        
+        /* to calculate the amount of days between the check-in and check-out */
         $dayDifference = date_diff(date_create($checkIn), date_create($checkOut));
         $amountOfDays = $dayDifference->format('%a');
         
-
+        /* create an empty array */
         $hotelArray = array();
-
+        /* loop thtough the original array, and make the hotel name, the key of the array, to make matching the selection to the appropriate info accurate */
         foreach ($hotelOptions as $Hotel => $value) {
             $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"]);
         };
 
+        /* create an array where all the selected hotels info is stored */
         $selectedHotel = $hotelArray["$selection"];
         $totalCosts = $amountOfDays * $selectedHotel["rate"]; 
       

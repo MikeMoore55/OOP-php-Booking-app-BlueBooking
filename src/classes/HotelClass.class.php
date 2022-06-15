@@ -1,6 +1,7 @@
 <?php
 /* this class is the "setup" of each hotel */
 
+/* MM - add images */
     class Hotel{
         public $name;
         public $rate;

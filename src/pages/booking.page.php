@@ -11,7 +11,7 @@
 
     $hotelOptions = file_get_contents("hotelList.json");
     $hotelOptions = json_decode($hotelOptions, TRUE);
-    
+    /* loop through the array to make select option based on the name */
     foreach ($hotelOptions as $hotels => $value) {
         $option .= "<option>".$value["name"]."</option>" ;
     }; 
@@ -42,7 +42,7 @@
         <h1><span>Blue</span>Booking</h1>
     </header>
     <main>
-    <!-- using GET so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
+    <!-- using "GET" so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
     <form class="booking-form" method="GET" action="../pages/display.php">
             <div class="user-name">
                 <label for="firstName" class="name">Name:</label>

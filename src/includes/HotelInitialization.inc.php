@@ -2,7 +2,7 @@
 /* here we create a populated array using the setup from the HotelClass.class.php */
     
     require "../classes/HotelClass.class.php";
-
+/* Based on real hotels in South Africa */
     $hotelListArray = [
         new Hotel("Alveston Manor Boutique Hotel & Spa", 1500, 4, "Cosy rooms with free Wi-Fi & TVs in a sophisticated hotel featuring a spa & a restaurant.", true, true, true, true, true),
         new Hotel("12 Apostles Hotel & Spa", 7150, 4.6, "Upscale property offering ocean views, a spa & restaurants, as well as a cinema & outdoor pools.", true, true, true, true, true),

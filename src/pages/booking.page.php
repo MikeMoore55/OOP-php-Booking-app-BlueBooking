@@ -3,11 +3,14 @@
 
 <?php
 
-   require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/createJsonFile.inc.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
 
-   /* MM - method */
+    initialize();
+
+    /* MM - method */
+    
     $hotelOptions = file_get_contents("hotelList.json");
-    $hotelOptions = json_decode($hotelOptions, TRUE);  
+    $hotelOptions = json_decode($hotelOptions, TRUE); 
 
     /* loop through the array to make select option based on the name */
     foreach ($hotelOptions as $hotels => $value) {

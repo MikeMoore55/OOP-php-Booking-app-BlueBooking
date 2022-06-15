@@ -13,7 +13,7 @@
         public $restaurant;
         public $childFriendly;
 
-        function __construct($name, $rate, $rating, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
+        public function __construct($name, $rate, $rating, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
         {
             $this->name = $name; 
             $this->rate = $rate;
@@ -26,39 +26,39 @@
             $this->childFriendly = $childFriendly;
         }
 
-        function get_name(){
+        public function get_name(){
             return $this->name;
         }
 
-        function get_rate(){
+        public function get_rate(){
             return $this->rate;
         }
 
-        function get_rating(){
+        public function get_rating(){
             return $this->rating;
         }
 
-        function get_description(){
+        public function get_description(){
             return $this->description;
         }
   
-        function get_pool(){
+        public function get_pool(){
             return $this->pool;
         }
   
-        function get_wifi(){
+        public function get_wifi(){
             return $this->wifi;
         }
    
-        function get_spa(){
+        public function get_spa(){
             return $this->spa;
         }
 
-        function get_restaurant(){
+        public function get_restaurant(){
             return $this->restaurant;
         }
 
-        function get_childFriendly(){
+        public function get_childFriendly(){
             return $this->childFriendly;
         }
     };

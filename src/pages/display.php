@@ -35,11 +35,19 @@
       
         $display .= "
         <div>
-            <p>User: ".$fullName."</p>
-            <p>Hotel: ".$selection."</p>
-            <p>Days: ".$amountOfDays."</p>
-            <p>Rate: R".$selectedHotel["rate"]."/day</p>
-            <p>Total: R".$totalCosts."</p>           
+            <h2>Your Booking</h2>
+            <h3>User: </h3><p>".$fullName."</p>
+            <h3>Email: </h3><p>".$email."</p>
+            <div class='hotel'>
+                <div class='hotel-name'>
+                    <h3>Hotel: </h3><p>".$selection."</p>
+                </div>
+                <div class='hotel-rate'>            
+                    <h3>Hotel Rate: </h3><p>R".$selectedHotel["rate"]."/day</p>
+                </div>
+            </div>
+            <h3>Days: </h3><p>".$amountOfDays."</p>
+            <h3 class='total'>Total: </h3><p>R".$totalCosts."</p>           
         </div>";
     }
 
@@ -61,11 +69,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <!-- css stylesheet -->
-    <link rel="stylesheet" href="../css/booking.css"> 
+    <link rel="stylesheet" href="../css/display.css"> 
 </head>
-<body>    
-    <?php 
-        echo $display;
+<body>
+    <?php
+           include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
     ?>
+    <div class="display-div">    
+        <?php 
+            echo $display;
+        ?>
+    </div>
+    <div class="buttons">
+        <form action="" method="" class="compare">
+            <input type="submit" name="compare" value="Compare Booking" class="compare-btn">
+        </form>
+        <form action="" method="" class="confirm">
+            <input type="submit" name="confirm" value="Confirm Booking" class="confirm-btn">
+        </form>
+    </div>
 </body>
 </html>

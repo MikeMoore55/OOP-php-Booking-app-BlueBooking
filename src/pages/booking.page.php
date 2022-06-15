@@ -2,20 +2,25 @@
 <!-- BOOKING-PAGE -->
 
 <?php
-
     require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
 
-    initialize();
+    if (!isset($_SESSION['Hotel'])) {
+        $_SESSION['Hotel'] = [];
 
-    /* MM - method */
-    
-    $hotelOptions = file_get_contents("hotelList.json");
-    $hotelOptions = json_decode($hotelOptions, TRUE); 
+        initialize();
 
-    /* loop through the array to make select option based on the name */
+        $hotelOptions = file_get_contents("hotelList.json");
+
+        $_SESSION['Hotel'] = json_decode($hotelOptions, true);
+        
+        $hotelOptions = $_SESSION['Hotel'];
+        
+    }
+
+     /* loop through the array to make select option based on the name */
     foreach ($hotelOptions as $hotels => $value) {
         $option .= "<option>".$value["name"]."</option>" ;
-    }; 
+    };
     
 ?>
 
@@ -42,11 +47,6 @@
     <?php
            include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
     ?>
-
-   <!--  <header class="header">
-        <img src="../images/blue-squares.png" class="squares">
-        <h1><span>Blue</span>Booking</h1>
-    </header> -->
     <main>
     <!-- using "GET" so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
     <form class="booking-form" method="GET" action="../pages/display.php">
@@ -70,7 +70,7 @@
                 <select name="selection" class="form-select">
                     <?php
                     
-                        echo($option);
+                         echo($option); 
                 
                     ?>
                 </select>

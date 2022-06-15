@@ -2,7 +2,7 @@
 /* this class is the "setup" of each hotel */
 
 /* MM - add images */
-    class Hotel{
+    class Hotel implements JsonSerializable{
         public $name;
         public $rate;
         public $rating;
@@ -26,40 +26,118 @@
             $this->childFriendly = $childFriendly;
         }
 
+        public function jsonSerialize() {
+    
+            $assocArray = [
+                "name" => $this->name,
+                "rate" => $this->rate,
+                "rating" => $this->rating,
+                "description" => $this->description,
+                "pool" => $this->pool,
+                "wifi" => $this->wifi,
+                "spa" => $this->spa,
+                "restaurant" => $this->restaurant,
+                "childFriendly" => $this->childFriendly,
+            ];
+    
+            return $assocArray;
+        }
+
+        public static function parse($Object){
+            $newHotel = new Hotel($Object->name, $Object->rate, $Object->rating, $Object->description, $Object->pool, $Object->wifi, $Object->spa, $Object->restaurant, $Object->childFriendly);
+            return $newHotel;
+        }
+
+
+        /* ---- Getters & Setters ---- */
         public function get_name(){
             return $this->name;
+        }
+
+        public function setName($name){
+            $this->name = $name;
+
+            return $this;
         }
 
         public function get_rate(){
             return $this->rate;
         }
 
+        public function setRate($rate){
+            $this->rate = $rate;
+
+            return $this;
+        }
+
         public function get_rating(){
             return $this->rating;
+        }
+
+        public function setRating($rating){
+            $this->rating = $rating;
+
+            return $this;
         }
 
         public function get_description(){
             return $this->description;
         }
+
+        public function setDescription($description){
+            $this->description = $description;
+
+            return $this;
+        }
   
         public function get_pool(){
             return $this->pool;
         }
+
+        public function setPool($pool){
+            $this->pool = $pool;
+
+            return $this;
+        }
   
         public function get_wifi(){
             return $this->wifi;
+        }
+
+        public function setWifi($wifi){
+            $this->wifi = $wifi;
+
+            return $this;
         }
    
         public function get_spa(){
             return $this->spa;
         }
 
+        public function setSpa($spa){
+            $this->spa = $spa;
+
+            return $this;
+        }
+
         public function get_restaurant(){
             return $this->restaurant;
         }
 
+        public function setRestaurant($restaurant){
+            $this->restaurant = $restaurant;
+
+            return $this;
+        }
+
         public function get_childFriendly(){
             return $this->childFriendly;
+        }
+
+        public function setChildFriendly($childFriendly){
+            $this->childFriendly = $childFriendly;
+
+            return $this;
         }
     };
 

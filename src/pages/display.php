@@ -45,7 +45,10 @@
 
         /* create an array where all the "selected hotels" info is stored */
         $selectedHotel = $hotelArray["$selection"];
-        $hotelRate = $selectedHotel["rate"]; 
+        $hotelRate = $selectedHotel["rate"];
+        
+        $_SESSION['selectedHotel'] = $selectedHotel;
+        $_SESSION['name'] = $fullName;
 
         /* function to calculate total costs */
         $totalCosts = calcCosts($amountOfDays, $hotelRate);
@@ -99,7 +102,7 @@
         ?>
     </div>
     <div class="buttons">
-        <form action="" method="" class="compare">
+        <form action="compare.page.php" method="GET" class="compare">
             <input type="submit" name="compare" value="Compare Booking" class="compare-btn">
         </form>
         <form action="" method="" class="confirm">

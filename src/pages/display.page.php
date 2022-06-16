@@ -105,7 +105,7 @@
         <form action="compare.page.php" method="GET" class="compare">
             <input type="submit" name="compare" value="Compare Booking" class="compare-btn">
         </form>
-        <form action="" method="" class="confirm">
+        <form action="confirmation.page.php" method="GET" class="confirm">
             <input type="submit" name="confirm" value="Confirm Booking" class="confirm-btn">
         </form>
     </div>

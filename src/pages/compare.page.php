@@ -1,4 +1,3 @@
-
 <!-- COMPARING-PAGE -->
 
 <!DOCTYPE html>
@@ -9,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueBooking</title>
     <link rel="icon" href="../images/blue-squares.png">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="../css/compare.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
-    <!-- css stylesheet -->
-    <link rel="stylesheet" href="../css/compare.css">
+    
 </head>
 <body>
     

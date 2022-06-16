@@ -1,18 +1,24 @@
 
 <!-- BOOKING-PAGE -->
 
+<!-- 
+    idea behind this layout is to make a quick book if user already knows hotel, a featured page, displays the hotel, with images, 
+    descriptions and lists amenities, for users who don't know the hotel options 
+-->
+
 <?php
     session_start();
 
     require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
+    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/hotelArray.func.php");
 
+    /* populate hotel class, make json file, and store in that json file */
     initialize();
 
-    $hotelOptions = file_get_contents("hotelList.json");
+    /* take json file and convert into associative array */
+    $hotelOptions  = hotelOptionsArray();
 
-    $hotelOptions = json_decode($hotelOptions, true);
-
-     /* loop through the array to make select option based on the name */
+     /* loop through the array to make select option based on the name of hotel */
     foreach ($hotelOptions as $hotels => $value) {
         $option .= "<option>".$value["name"]."</option>" ;
     }; 
@@ -40,10 +46,11 @@
 </head>
 <body>
     <?php
-           include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
+        /*--Header--  */
+        include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
     ?>
     <main>
-    <!-- using "GET" so selection can appear in link, if user chooses to send link to someone who wishes to see the selection -->
+    <!-- using "GET", so selection can appear in link, and if user chooses to send link to someone. that said person can also see the selection with that link -->
     <form class="booking-form" method="GET" action="../pages/display.php">
             <?php
             ?>

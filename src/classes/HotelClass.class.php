@@ -2,6 +2,7 @@
 /* this class is the "setup" of each hotel */
 
 /* MM - add images */
+
     class Hotel implements JsonSerializable{
         public $name;
         public $rate;

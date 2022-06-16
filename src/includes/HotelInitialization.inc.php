@@ -14,6 +14,7 @@
                 new Hotel("Libra Lodge", 758, 4.6, "Simply furnished rooms in a down-to-earth bed-and-breakfast featuring an outdoor pool & dining.", true, true, false, true, true),
         ];
 
+        /* take the above array, convert to json file */
         $hotelList = json_encode($hotelListArray);
         file_put_contents("hotelList.json", $hotelList);
     };

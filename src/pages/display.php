@@ -1,17 +1,26 @@
 
 <!-- DISPLAY-PAGE! -->
 
+
+<!-- 
+    idea behimd this page is for user to see the selection, in great detail, and if user wishes to compare, can click a button, and if not, 
+    can finnish booking by clicking confirm button
+ -->
+
 <?php
     session_start();
-    /*MM - make into method */
+
     include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/calcDays.func.php");
     include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/calcCosts.func.php");
+    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/fullName.func.php");
+    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/hotelArray.func.php");
 
-    $hotelOptions = file_get_contents("hotelList.json");
-    $hotelOptions = json_decode($hotelOptions, TRUE); 
-  
+    /* take json file and convert into associative array */
+    $hotelOptions = hotelOptionsArray();
+ 
 
     if (isset($_GET['save'])) {
+
         /* variables from form */
         $name = $_GET['firstName'];
         $surname = $_GET['lastName'];
@@ -20,12 +29,13 @@
         $checkOut = $_GET['checkOut'];
         $selection = $_GET['selection'];
 
-
-        $fullName .= $name." ".$surname;
+        /* create a single Name variable by combining first-name and last-name */
+        $fullName = fullName($name, $surname);
+        
         /* to calculate the amount of days between the check-in and check-out */
-
         $amountOfDays = calcDays($checkIn, $checkOut);
 
+        /* empty array */
         $hotelArray = array();
         
         /* loop thtough the original array, and make the hotel name, the key of the array, to make matching the selection to the appropriate info accurate */
@@ -33,12 +43,14 @@
             $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"]);
         };
 
-        /* create an array where all the selected hotels info is stored */
+        /* create an array where all the "selected hotels" info is stored */
         $selectedHotel = $hotelArray["$selection"];
         $hotelRate = $selectedHotel["rate"]; 
 
+        /* function to calculate total costs */
         $totalCosts = calcCosts($amountOfDays, $hotelRate);
       
+        /* MM - make into function */
         $display .= "
         <div>
             <h2>Your Booking</h2>

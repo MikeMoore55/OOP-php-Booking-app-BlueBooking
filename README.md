@@ -16,7 +16,11 @@ This is an OOP based Hotel Booking & comparing Application made in PHP.
 - Data must persist between pages
 
 ## Backlog
+- mailer
+- compare
+- make more OOP
 
+## Future plans
 - # Featured hotel pages
 - make a grid based feature page to display hotels to make a slection easier
 - # login & register

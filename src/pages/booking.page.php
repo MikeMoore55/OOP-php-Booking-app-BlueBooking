@@ -9,8 +9,7 @@
 <?php
     session_start();
 
-    require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
-    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/hotelArray.func.php");
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
 
     /* populate hotel class, make json file, and store in that json file */
     initialize();
@@ -41,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    
     <!-- css stylesheet -->
     <link rel="stylesheet" href="../css/booking.style.css">  
 </head>
@@ -51,7 +51,7 @@
     ?>
     <main>
     <!-- using "GET", so selection can appear in link, and if user chooses to send link to someone. that said person can also see the selection with that link -->
-    <form class="booking-form" method="GET" action="../pages/display.page.php">
+        <form class="booking-form" method="GET" action="../pages/display.page.php">
             <?php
             ?>
             <div class="user-name">

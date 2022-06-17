@@ -18,5 +18,13 @@
         $hotelList = json_encode($hotelListArray);
         file_put_contents("hotelList.json", $hotelList);
     };
+
+    function hotelOptionsArray(){
+
+        $hotelOptions = file_get_contents("hotelList.json");
+        $hotelOptions = json_decode($hotelOptions, TRUE); 
+    
+        return $hotelOptions;
+    }
     
 ?>

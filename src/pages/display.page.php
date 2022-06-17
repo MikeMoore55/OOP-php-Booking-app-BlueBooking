@@ -10,10 +10,8 @@
 <?php
     session_start();
 
-    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/calcDays.func.php");
-    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/calcCosts.func.php");
-    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/fullName.func.php");
-    include ("/MAMP/htdocs/OOP-php-Booking-app/src/functions/hotelArray.func.php");
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/userInfo.class.php"); 
 
     /* take json file and convert into associative array */
     $hotelOptions = hotelOptionsArray();
@@ -48,7 +46,6 @@
         $hotelRate = $selectedHotel["rate"];
         
         $_SESSION['selectedHotel'] = $selectedHotel;
-        $_SESSION['name'] = $fullName;
 
         /* function to calculate total costs */
         $totalCosts = calcCosts($amountOfDays, $hotelRate);

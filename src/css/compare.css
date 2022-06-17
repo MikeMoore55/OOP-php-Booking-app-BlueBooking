@@ -9,7 +9,6 @@ body{
     width: auto;
 }
 
-
 .header{
     position: absolute;
     display: flex;
@@ -93,9 +92,20 @@ h1 span{
         position: relative;
         width: 20%;
     }
+
+    .option-list{
+        position: absolute;
+        top: 20%;
+        width: 50%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .option-list div{
+        position: relative;
+        border: solid 2px black;
+        padding: 2% 2% 2% 2% ;
+        margin: 5% 5% 5% 5%;
+    }
+
 }
-
-
-/* color palette
-https://coolors.co/palette/90c1e3-000055-2d71ac-000000-185e95-000000
-*/ 

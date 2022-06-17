@@ -27,13 +27,15 @@
         $selection = $_GET['selection'];
 
         $_SESSION['selection'] = $selection;
+        $_SESSION["checkIn"] = $checkIn;
+        $_SESSION["checkOut"] = $checkOut;    
 
         /* empty array */
         $hotelArray = array();
         
         /* loop thtough the original array, and make the hotel name, the key of the array, to make matching the selection to the appropriate info accurate */
         foreach ($hotelOptions as $Hotel => $value) {
-            $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"]);
+            $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"], "rating" => $value["rating"], "pool" => $value["pool"], "spa" => $value["spa"], "wifi" => $value["wifi"], "restaurant" => $value["restaurant"], "childFriendly" => $value["childFriendly"] );
         };
 
         $_SESSION['simpleHotelsArray'] = $hotelArray;
@@ -46,8 +48,9 @@
       
         $selectedHotelObject = [];
         array_push($selectedHotelObject, $newBooking);
+        $_SESSION['selectedHotelObject'] = $selectedHotelObject;
 
-        $_SESSION['selectedHotelKey'];
+        
     };
 
 ?>

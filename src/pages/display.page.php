@@ -11,13 +11,6 @@
     session_start();
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/BookingInfo.class.php"); 
-   require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/userInfo.class.php"); 
-
-/*     if ( !isset($_SESSION['bookings']) ) {
-            
-        $_SESSION['bookings'] = array();
-
-    } */
 
     /* take json file and convert into associative array */
     $hotelOptions = hotelOptionsArray();
@@ -33,12 +26,7 @@
         $checkOut = $_GET['checkOut'];
         $selection = $_GET['selection'];
 
-
-        /* create a single Name variable by combining first-name and last-name */
-        /* $fullName = fullName($name, $surname); */
-        
-        /* to calculate the amount of days between the check-in and check-out */
-        /* $amountOfDays = calcDays($checkIn, $checkOut); */
+        $_SESSION['selection'] = $selection;
 
         /* empty array */
         $hotelArray = array();
@@ -48,58 +36,18 @@
             $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"]);
         };
 
+        $_SESSION['simpleHotelsArray'] = $hotelArray;
+
         /* create an array where all the "selected hotels" info is stored */
         $selectedHotel = $hotelArray["$selection"];
         $hotelRate = $selectedHotel["rate"];
-        
-
-        /* function to calculate total costs */
-        $totalCosts = calcCosts($amountOfDays, $hotelRate);
 
         $newBooking = BookingInformation::createBooking($name, $surname, $email, $selection, $checkIn, $checkOut, $hotelRate);
       
         $selectedHotelObject = [];
         array_push($selectedHotelObject, $newBooking);
 
-        /* MM - make into function */
-      /*   foreach ($_SESSION['bookings'] as $index => $booking) {
-            echo"
-                        <div>
-                            <h2>Your Booking</h2>
-                            <h3>User: </h3><p>".$booking ->fullName()."</p>
-                            <h3>Email: </h3><p>".$booking-> email."</p>
-                            <div class='hotel'>
-                                <div class='hotel-name'>
-                                    <h3>Hotel: </h3><p>".$booking->hotel."</p>
-                                </div> 
-                                <div class='hotel-rate'>            
-                                    <h3>Hotel Rate: </h3><p>R".$booking->rate."/day</p>
-                                </div>    
-                            </div>
-                            <h3>Check-In: </h3><p>".$booking->checkIn."</p>
-                                <h3>Check-Out: </h3><p>".$booking->checkOut."</p>
-                            <h3>Days: </h3><p>".$booking->calcDays()."</p>
-                            <h3 class='total'>Total: </h3><p>R".$booking->calcCosts()."</p>  
-                        </div>
-                        ";
-        }; */
-        
-        /* $display .= "
-        <div>
-            <h2>Your Booking</h2>
-            <h3>User: </h3><p>".$fullName."</p>
-            <h3>Email: </h3><p>".$email."</p>
-            <div class='hotel'>
-                <div class='hotel-name'>
-                    <h3>Hotel: </h3><p>".$selection."</p>
-                </div>
-                <div class='hotel-rate'>            
-                    <h3>Hotel Rate: </h3><p>R".$selectedHotel["rate"]."/day</p>
-                </div>
-            </div>
-            <h3>Days: </h3><p>".$amountOfDays."</p>
-            <h3 class='total'>Total: </h3><p>R".$totalCosts."</p>           
-        </div>"; */
+        $_SESSION['selectedHotelKey'];
     };
 
 ?>
@@ -141,13 +89,13 @@
                                         <h3>Hotel: </h3><p>".$booking->hotel."</p>
                                     </div> 
                                     <div class='hotel-rate'>            
-                                        <h3>Hotel Rate: </h3><p>R".$booking->rate."/day</p>
+                                        <h3>Hotel Rate: </h3><p>R".$booking->rate."-00/day</p>
                                     </div>    
                                 </div>
                                 <h3>Check-In: </h3><p>".$booking->checkIn."</p>
                                     <h3>Check-Out: </h3><p>".$booking->checkOut."</p>
                                 <h3>Days: </h3><p>".$booking->calcDays()."</p>
-                                <h3 class='total'>Total: </h3><p>R".$booking->calcCosts()."</p>  
+                                <h3 class='total'>Total: </h3><p>R".$booking->calcCosts()."-00</p>  
                             </div>
                             ";
                 }; 

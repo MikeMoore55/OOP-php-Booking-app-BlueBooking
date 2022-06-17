@@ -48,9 +48,9 @@
             if ($checkInDate >= $checkOutDate) {
                 echo "
                 <script>
-                    alert('Error, duration of stay must be longer than 1 night/day');
-                </script>
-                ";
+                    alert('Error, your stay at $hotelName must be longer than 1 night');
+                </script>"
+                ;
     
             } else {
     

@@ -1,6 +1,21 @@
 <!-- COMPARING-PAGE -->
 
 <?php
+    session_start();
+
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/BookingInfo.class.php"); 
+
+    $_SESSION['selectedHotelKey'];
+
+    $selectedHotel = $_SESSION['selectedHotelKey'];
+
+    $hotelOptions = hotelOptionsArray();
+
+    $hotelArray = $_SESSION['simpleHotelsArray'];
+    $selectedHotelName = $_SESSION['selection'];
+
+
 
 ?>
 

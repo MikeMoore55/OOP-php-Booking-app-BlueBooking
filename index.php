@@ -1,6 +1,25 @@
 
 <!-- LANDING PAGE -->
 
+<!-- php
+
+$request = $_SERVER['REQUEST_URI'];
+
+$basepath = "OOP-php-Booking-app/";
+$request = str_replace($basepath, "", $request);
+echo $request;
+
+switch ($request) {
+    case '/booking':
+        require __DIR__ . '/src/pages/booking.page.php';
+        break;
+    default:
+        http_response_code(404);
+        echo "page not found";
+        break;
+} -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

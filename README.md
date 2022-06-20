@@ -17,8 +17,9 @@ This is an OOP based Hotel Booking & comparing Application made in PHP.
 
 ## Backlog
 - mailer
-- compare
 - make more OOP
+- htaccess
+-better styling
 
 ## Future plans
 - # Featured hotel pages

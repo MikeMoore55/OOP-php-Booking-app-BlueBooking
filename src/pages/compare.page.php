@@ -56,6 +56,7 @@
            include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
     ?>
     <main>
+        
         <div class="selected-hotel">
             <?php
                  foreach ($selectedHotel as $index => $hotel) {

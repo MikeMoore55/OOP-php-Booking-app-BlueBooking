@@ -65,11 +65,13 @@
         <div class="option-list">
             <?php
                 foreach ($twoOptions as $hotels => $value) {
+
                     $totalCosts =  $amountOfDays * $value["rate"];
-                    echo
-                                        "
+
+                            echo        "
                                         <div>
                                             <h3>$hotels</h3>
+                                            <img src=" . $value['image'] . ">
                                             <h4>Description</h4>
                                             <p>".$value["desc"]."</p>
                                             <h4>Rating:</h4>

@@ -35,7 +35,7 @@
         
         /* loop thtough the original array, and make the hotel name, the key of the array, to make matching the selection to the appropriate info accurate */
         foreach ($hotelOptions as $Hotel => $value) {
-            $hotelArray[$value['name']] = array("rate" => $value["rate"], "desc" => $value["description"], "rating" => $value["rating"], "pool" => $value["pool"], "spa" => $value["spa"], "wifi" => $value["wifi"], "restaurant" => $value["restaurant"], "childFriendly" => $value["childFriendly"] );
+            $hotelArray[$value['name']] = array("rate" => $value["rate"],"image" => $value["image"], "desc" => $value["description"], "rating" => $value["rating"], "pool" => $value["pool"], "spa" => $value["spa"], "wifi" => $value["wifi"], "restaurant" => $value["restaurant"], "childFriendly" => $value["childFriendly"] );
         };
 
         $_SESSION['simpleHotelsArray'] = $hotelArray;

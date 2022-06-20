@@ -5,6 +5,7 @@
 
     class Hotel implements JsonSerializable{
         public $name;
+        public $image;
         public $rate;
         public $rating;
         public $description;
@@ -14,9 +15,10 @@
         public $restaurant;
         public $childFriendly;
 
-        public function __construct($name, $rate, $rating, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
+        public function __construct($name, $image, $rate, $rating, $description, $pool, $wifi, $spa, $restaurant, $childFriendly,)
         {
             $this->name = $name; 
+            $this->image = $image;
             $this->rate = $rate;
             $this->rating = $rating;
             $this->description = $description;
@@ -31,6 +33,7 @@
     
             $assocArray = [
                 "name" => $this->name,
+                "image" => $this-> image,
                 "rate" => $this->rate,
                 "rating" => $this->rating,
                 "description" => $this->description,
@@ -45,7 +48,7 @@
         }
 
         public static function parse($Object){
-            $newHotel = new Hotel($Object->name, $Object->rate, $Object->rating, $Object->description, $Object->pool, $Object->wifi, $Object->spa, $Object->restaurant, $Object->childFriendly);
+            $newHotel = new Hotel($Object->name, $Object->image, $Object->rate, $Object->rating, $Object->description, $Object->pool, $Object->wifi, $Object->spa, $Object->restaurant, $Object->childFriendly);
             return $newHotel;
         }
 
@@ -57,6 +60,16 @@
 
         public function setName($name){
             $this->name = $name;
+
+            return $this;
+        }
+
+        public function get_image(){
+            return $this->image;
+        }
+
+        public function setImage($image){
+            $this->image = $image;
 
             return $this;
         }

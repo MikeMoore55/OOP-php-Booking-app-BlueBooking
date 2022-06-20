@@ -43,11 +43,16 @@
         /* create an array where all the "selected hotels" info is stored */
         $selectedHotel = $hotelArray["$selection"];
         $hotelRate = $selectedHotel["rate"];
+        $hotelImage = $selectedHotel["image"];
 
-        $newBooking = BookingInformation::createBooking($name, $surname, $email, $selection, $checkIn, $checkOut, $hotelRate);
+        $newBooking = BookingInformation::createBooking($name, $surname, $email, $selection, $hotelImage, $checkIn, $checkOut, $hotelRate);
       
         $selectedHotelObject = [];
         array_push($selectedHotelObject, $newBooking);
+
+    /*     SaveToJson($newBooking);
+        bookingArray(); */
+
         $_SESSION['selectedHotelObject'] = $selectedHotelObject;
 
         
@@ -71,7 +76,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <!-- css stylesheet -->
-    <link rel="stylesheet" href="../css/display.style.css"> 
+    <link rel="stylesheet" href="../css/display.css"> 
 </head>
 <body>
     <?php
@@ -82,28 +87,45 @@
               
               
               foreach ($selectedHotelObject as $index => $booking) {
-                    echo"
+                    echo'
                             <div>
                                 <h2>Your Booking</h2>
-                                <h3>User: </h3><p>".$booking ->fullName()."</p>
-                                <h3>Email: </h3><p>".$booking-> email."</p>
-                                <div class='hotel'>
-                                    <div class='hotel-name'>
-                                        <h3>Hotel: </h3><p>".$booking->hotel."</p>
-                                    </div> 
-                                    <div class='hotel-rate'>            
-                                        <h3>Hotel Rate: </h3><p>R".$booking->rate."-00/day</p>
-                                    </div>    
+                                <div class="user">
+                                    <div class="name">
+                                        <h3>User: </h3><p>'.$booking ->fullName().'</p>
+                                    </div>
+                                    <div class="email">
+                                        <h3>Email: </h3><p>'.$booking-> email.'</p>
+                                    </div>
                                 </div>
-                                <h3>Check-In: </h3><p>".$booking->checkIn."</p>
-                                    <h3>Check-Out: </h3><p>".$booking->checkOut."</p>
-                                <h3>Days: </h3><p>".$booking->calcDays()."</p>
-                                <h3 class='total'>Total: </h3><p>R".$booking->calcCosts()."-00</p>  
+                                <div class="hotel-info">
+                                    <div class="hotel">
+                                        <div class="hotel-name">
+                                            <h3>Hotel: </h3><p>'.$booking->hotel.'</p>
+                                        </div> 
+                                        <div class="hotel-rate">            
+                                            <h3>Hotel Rate: </h3><p>R'.$booking->rate.'-00/day</p>
+                                        </div> 
+                                    </div>    
+                                    <img class="hotel-img" src="'.$booking->image.'">
+                                </div>   
+                                <div class="time">
+                                    <div class="in">
+                                        <h3>Check-In: </h3><p>'.$booking->checkIn.'</p>
+                                    </div>
+                                    <div class="out">
+                                        <h3>Check-Out: </h3><p>'.$booking->checkOut.'</p>
+                                    </div>
+                                    <div class="total-days">
+                                        <h3>Days: </h3><p>'.$booking->calcDays().'</p>
+                                    </div>        
+                                </div>
+                                <h3 class="total">Total: </h3><p>R'.$booking->calcCosts().'-00</p>  
                             </div>
-                            ";
+                            ';
                 }; 
         ?>
-    </div>
+   
     <div class="buttons">
         <form action="compare.page.php" method="GET" class="compare">
             <input type="submit" name="compare" value="Compare Booking" class="compare-btn">
@@ -112,5 +134,6 @@
             <input type="submit" name="confirm" value="Confirm Booking" class="confirm-btn">
         </form>
     </div>
+ </div>
 </body>
 </html>

@@ -6,9 +6,7 @@
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/BookingInfo.class.php"); 
 
-    $_SESSION['selectedHotelKey'];
-
-    $selectedHotel = $_SESSION['selectedHotelKey'];
+   
 
     $checkIn = $_SESSION["checkIn"];
     $checkOut = $_SESSION["checkOut"];   
@@ -32,7 +30,9 @@
 
     $options = $optionsArray;
     $twoOptions = array_slice($options, 0, 2);
-    
+
+
+    var_dump($selectedHotel = $_SESSION['selectedHotelIObject']);
 
 ?>
 
@@ -44,7 +44,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueBooking</title>
     <link rel="icon" href="../images/blue-squares.png">
-    <link rel="stylesheet" href="../css/compare.css">
+    <link rel="stylesheet" href="../css/compare.style.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,36 +58,41 @@
     <?php
            include("/MAMP/htdocs/OOP-php-Booking-app/src/includes/header.inc.php"); 
     ?>
-    <main>
+ <!--    <main>
         <div>
-        <!-- make selected hotel appear here -->
+         make selected hotel appear here 
         </div>
         <div class="option-list">
-            <?php
-                foreach ($twoOptions as $hotels => $value) {
+            
+            php
+                print_r($selectedHotel);
+
+                 foreach ($twoOptions as $hotels => $value) {
+
+                    print_r($selectedHotel);
 
                     $totalCosts =  $amountOfDays * $value["rate"];
 
-                            echo        "
-                                        <div>
-                                            <h3>$hotels</h3>
-                                            <img src=" . $value['image'] . ">
+                            echo        
+                                       '<div>
+                                            <h3>'.$hotels.'</h3>
+                                            <img class="hotel-img" src="' . $value["image"] . '">
                                             <h4>Description</h4>
-                                            <p>".$value["desc"]."</p>
+                                            <p>'.$value["desc"].'</p>
                                             <h4>Rating:</h4>
-                                            <p>".$value["rating"]."/5</p>
+                                            <p>'.$value["rating"].'/5</p>
                                             <h4>Rate:</h4>
-                                            <p>R".$value["rate"]."-00/night</p>
+                                            <p>R'.$value["rate"].'-00/night</p>
                                             <h4>Your Stay:</h4>
                                             <ul>
-                                                <li>Days: ".$amountOfDays."</li>
-                                                <li>Total Cost: R".$totalCosts."-00</li>
+                                                <li>Days: '.$amountOfDays.'</li>
+                                                <li>Total Cost: R'.$totalCosts.'-00</li>
                                             </ul>
-                                        </div>
-                                        ";
-                }
+                                        </div>'
+                                        ;
+                } 
             ?> 
         </div>
-    </main>
+    </main> -->
 </body>
 </html>

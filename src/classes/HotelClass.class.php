@@ -54,7 +54,7 @@
 
 
         /* ---- Getters & Setters ---- */
-        public function get_name(){
+       public function get_name(){
             return $this->name;
         }
 
@@ -62,8 +62,8 @@
             $this->name = $name;
 
             return $this;
-        }
-
+        }  
+        
         public function get_image(){
             return $this->image;
         }

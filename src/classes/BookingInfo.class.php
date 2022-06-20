@@ -5,17 +5,19 @@
         public $surname;
         public $email;
         public $hotel;
+        public $image;
         public $checkIn;
         public $checkOut;
         public $rate;
        
 
-        public function __construct($userName, $userSurname, $userEmail, $hotelName, $checkInDate, $checkOutDate, $hotelRate)
+        public function __construct($userName, $userSurname, $userEmail, $hotelName, $hotelImage , $checkInDate, $checkOutDate, $hotelRate)
         {
             $this->name = $userName;
             $this->surname = $userSurname;
             $this->email = $userEmail; 
             $this->hotel = $hotelName;
+            $this->image = $hotelImage;
             $this->checkIn = $checkInDate;
             $this->checkOut = $checkOutDate;
             $this->rate = $hotelRate;     
@@ -44,7 +46,7 @@
             return $fullName;
         }
             
-        public static function createBooking($userName, $userSurname, $userEmail, $hotelName, $checkInDate, $checkOutDate, $hotelRate){
+        public static function createBooking($userName, $userSurname, $userEmail, $hotelName, $hotelImage, $checkInDate, $checkOutDate, $hotelRate){
             if ($checkInDate >= $checkOutDate) {
                 echo "
                 <script>
@@ -54,9 +56,10 @@
     
             } else {
     
-                $newBooking = new BookingInformation($userName, $userSurname, $userEmail, $hotelName, $checkInDate, $checkOutDate, $hotelRate);
+                $newBooking = new BookingInformation($userName, $userSurname, $userEmail, $hotelName, $hotelImage, $checkInDate, $checkOutDate, $hotelRate);
 
-                return $newBooking;
+                return $newBooking; 
+               
             }
         }
 

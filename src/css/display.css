@@ -21,22 +21,22 @@ body{
 h1{
    align-self: center;
     font-family: 'Fascinate', cursive;
-    font-size: 1.7em;
+    font-size: 2em;
     text-shadow: rgb(91, 91, 91) 5px 5px 10px;
 }
 
 h1 span{
-    align-self: center;
+    align-self: left;
     font-family: 'Fascinate', cursive;
     color: #185E95;
-    font-size: 1.9em;
+    font-size: 1.4em;
 }
 
 .display-div{
     position: absolute;
     top: 18%;
-    width: 84%;
-    left: 8%;
+    width: 90%;
+    left: 5%;
 }
 
 .display-div div{
@@ -46,20 +46,43 @@ h1 span{
 }
 
 .display-div div h2{
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #185E95;
-    text-align: center;
+    text-align: left;
     text-shadow: rgb(91, 91, 91) 5px 5px 10px;
 }
 
 .display-div div h3{
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 0%;
     text-decoration: underline;
 }
 
 .display-div div .total{
     color: #185E95;
+}
+
+.hotel-img{
+    position: relative;
+    width: 60%;
+}
+
+.display-div div .time{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+}
+
+.display-div div .time .in{
+    margin-right: 2%;
+}
+
+.display-div div .time .out{
+    margin-left: 5%;
+}
+
+.display-div div .time .total-days{
+    text-align: left;
 }
 
 .display-div div p{
@@ -69,10 +92,11 @@ h1 span{
 }
 
 .buttons{
-    position: absolute;
-    bottom: 7%;
-    left: 8%;
-    width: 92%;
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    left: 0%;
+    width: 90%;
     display: flex;
 }
 
@@ -85,7 +109,7 @@ h1 span{
 
 .compare-btn{
     background-color: #185E95;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 3% 5% 3% 5%;
     margin: 0%;
     border: none;
@@ -108,7 +132,7 @@ h1 span{
 
 .confirm-btn{
     background-color: #185E95;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 3% 5% 3% 5%;
     margin: 0%;
     border: none;
@@ -127,33 +151,27 @@ h1 span{
 
     .header{
         top: 0%;
-        left: 0%;
+        left: 35%;
+        width: 30%;
     }
 
-    .squares{
-        width: 5%;
+    .header .img{
+        width: 10%;
     }
 
-    h1{
-        font-size: 0.5em;
-    }
-
-    h1 span{
+    .header h1{
         font-size: 1.3em;
     }
 
     .display-div{
-        top: 40%;
+        top: 15%;
         width: 76%;
         left: 12%;
     }
 
     .display-div div h2{
-        position: fixed;
-        font-size: 1.1em;
-        text-align: right;
-        top: 35%;
-        right: 3%;
+        text-align: center;
+        font-size: 1em;
     }
     
     .display-div div h3{
@@ -161,9 +179,58 @@ h1 span{
     }
     
     .display-div div p{
-        font-size: 0.9em;
+        font-size: 1em;
         margin: 0%;
         margin-bottom: 2%;
+    }
+
+    
+    .display-div div .user{
+        display: block;
+        margin-bottom: 2%;
+    }
+
+    .display-div div .user .name{
+        margin-right: 3%;
+    } 
+
+    .display-div div .user .email{
+        margin-left: 0%
+
+    }
+
+    .display-div div .hotel{
+        display: block;
+    }
+
+    .display-div div .hotel .hotel-name{
+        margin-right: 3%;
+    }
+
+    .display-div div .hotel .hotel-rate{
+        margin-left: 0%
+    }
+
+    .hotel-img{
+        position: relative;
+        width: 40%;
+    }
+
+    .display-div div .time{
+        display: block;
+        margin-top: 2%;
+    }
+
+    .display-div div .time .in{
+        margin-right: 3%;
+    }
+
+    .display-div div .time .out{
+        margin-left: 0%
+    }
+
+    .display-div div .time .total-days{
+        margin-left: 0%
     }
 
     .buttons{
@@ -235,10 +302,59 @@ h1 span{
         margin-bottom: 2%;
     }
 
+    
+    .display-div div .user{
+        display: block;
+        margin-bottom: 2%;
+    }
+
+    .display-div div .user .name{
+        margin-right: 3%;
+    } 
+
+    .display-div div .user .email{
+        margin-left: 0%
+
+    }
+
+    .display-div div .hotel{
+        display: block;
+    }
+
+    .display-div div .hotel .hotel-name{
+        margin-right: 3%;
+    }
+
+    .display-div div .hotel .hotel-rate{
+        margin-left: 0%
+    }
+
+    .hotel-img{
+        position: relative;
+        width: 40%;
+    }
+
+    .display-div div .time{
+        display: block;
+        margin-top: 2%;
+    }
+
+    .display-div div .time .in{
+        margin-right: 3%;
+    }
+
+    .display-div div .time .out{
+        margin-left: 0%
+    }
+
+    .display-div div .time .total-days{
+        margin-left: 0%
+    }
+
     .buttons{
-        position: absolute;
-        bottom: 5%;
-        left: 12%;
+        position: relative;
+        margin-bottom: 5%;
+        left: 0%;   
     }
 
     .compare{
@@ -246,7 +362,7 @@ h1 span{
     }
 
     .compare-btn{
-        font-size: 1.9em;
+        font-size: 1.7em;
         padding: 2% 7% 2% 7%;
     }
 
@@ -255,7 +371,7 @@ h1 span{
     }
 
     .confirm-btn{
-        font-size: 1.9em;
+        font-size: 1.7em;
         padding: 2% 7% 2% 7%;
     }
 
@@ -304,28 +420,59 @@ h1 span{
         margin-bottom: 1%;
     }
 
+    .display-div div .user{
+        display: flex;
+        margin-bottom: 2%;
+    }
+
+    .display-div div .user .name{
+        margin-right: 3%;
+    } 
+
+    .display-div div .user .email{
+        margin-left: 3%
+
+    }
+
     .display-div div .hotel{
         display: flex;
     }
 
     .display-div div .hotel .hotel-name{
-        margin-right: 5%;
+        margin-right: 3%;
     }
 
     .display-div div .hotel .hotel-rate{
-        margin-left: 5%
+        margin-left: 3%
     }
 
-    .display-div div .hotel .hotel-rate{
-        width: 50%;
-    
+    .hotel-img{
+        position: relative;
+        width: 30%;
+    }
+
+    .display-div div .time{
+        display: flex;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .display-div div .time .in{
+        margin-right: 3%;
+    }
+
+    .display-div div .time .out{
+        margin-left: 3%
+    }
+
+    .display-div div .time .total-days{
+        margin-left: 3%
     }
 
     .buttons{
-        position: absolute;
-        width: 50%;
-        left: 9%;
-        bottom: 5%;
+        position: relative;
+        margin-bottom: 2%;
+        display: flex;
     }
 
     .compare{

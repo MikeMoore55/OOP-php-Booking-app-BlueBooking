@@ -1,35 +1,35 @@
 <!-- COMPARING-PAGE -->
 
+<!-- 
+    the idea behind the page it for users to compare their selection with another 2, i would like to make the user be able to catagories 
+    what they would like to compare with (i.e. location, price) but for now this is fine 
+-->
+
 <?php
     session_start();
 
-    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/BookingInfo.class.php"); 
 
-
+/* session stored variables */
     $checkIn = $_SESSION["checkIn"];
     $checkOut = $_SESSION["checkOut"];   
-
-    $hotelOptions = hotelOptionsArray();
-
     $hotelArray = $_SESSION['simpleHotelsArray'];
     $selectedHotelName = $_SESSION['selection'];
 
+    $hotelOptions = hotelOptionsArray();
     $optionsArray = $hotelArray;
     
-
     $dayDifference = date_diff(date_create($checkIn), date_create($checkOut));
     $amountOfDays = $dayDifference->format('%a');
 
     $bookedHotel = file_get_contents("bookingInfo.json");
     $selectedHotel = json_decode($bookedHotel, TRUE);  
 
-
     unset($optionsArray["$selectedHotelName"]);
 
     $options = $optionsArray;
     $twoOptions = array_slice($options, 0, 2);
-
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +40,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlueBooking</title>
     <link rel="icon" href="../images/blue-squares.png">
+    <!-- stylesheet -->
     <link rel="stylesheet" href="../css/compare-page.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,10 +72,9 @@
                             <h4>Rate:</h4>
                             <p>R'.$hotel["rate"].'-00/night</p>
                             <h4>Your Stay:</h4>
-                            <ul>
-                                <li>Days: '.$amountOfDays.'</li>
-                                <li>Total Cost: R'.$totalCost.'-00</li>
-                            </ul>
+                            <p>Days: '.$amountOfDays.'</p>
+                            <p>Total Cost: R'.$totalCost.'-00</p>
+                            
                             <form action="confirmation.page.php" method="GET" class="confirm">
                                 <input type="submit" name="confirm" value="Confirm Booking" class="confirm-btn">
                             </form></fieldset>
@@ -101,10 +101,9 @@
                                 <h4>Rate:</h4>
                                 <p>R'.$value["rate"].'-00/night</p>
                                 <h4>Your Stay:</h4>
-                                <ul>
-                                    <li>Days: '.$amountOfDays.'</li>
-                                    <li>Total Cost: R'.$totalCosts.'-00</li>
-                                </ul>
+                                <p>Days: '.$amountOfDays.'</p>
+                                <p>Total Cost: R'.$totalCosts.'-00</p>
+  
                                 <form action="confirmation.page.php" method="GET" class="confirm">
                                     <input type="submit" name="confirm" value="Book This Option" class="confirm-btn">
                                 </form></fieldset>

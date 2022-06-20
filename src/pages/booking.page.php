@@ -9,7 +9,7 @@
 <?php
     session_start();
 
-    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
 
     /* populate hotel class, make json file, and store in that json file */
     initialize();

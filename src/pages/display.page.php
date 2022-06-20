@@ -9,7 +9,7 @@
 
 <?php
     session_start();
-    require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/HotelInitialization.class.php"); 
+    require("/MAMP/htdocs/OOP-php-Booking-app/src/includes/HotelInitialization.inc.php"); 
     require("/MAMP/htdocs/OOP-php-Booking-app/src/classes/BookingInfo.class.php"); 
 
     /* take json file and convert into associative array */

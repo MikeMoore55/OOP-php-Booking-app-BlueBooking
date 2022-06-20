@@ -94,11 +94,19 @@ h1 span{
     }
 
     .option-list{
-        position: absolute;
+        position: fixed;
         top: 20%;
+        right: 1%;
         width: 50%;
         display: grid;
         grid-template-columns: 50% 50%;
+    }
+
+    .option-list div{
+        position: relative;
+        border: solid 2px black;
+        padding: 2% 2% 2% 2% ;
+        margin: 5% 5% 5% 5%;
     }
 
     .option-list div{
@@ -112,7 +120,6 @@ h1 span{
         position: relative;
         width: 90%;
         left: 5%;
-
     }
 
 }

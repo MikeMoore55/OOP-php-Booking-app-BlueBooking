@@ -45,13 +45,13 @@
         $hotelRate = $selectedHotel["rate"];
         $hotelImage = $selectedHotel["image"];
 
-        $newBooking = BookingInformation::createBooking($name, $surname, $email, $selection, $hotelImage, $checkIn, $checkOut, $hotelRate);
+        $newBooking = BookingInformation::createBooking($name, $surname, $email, $selection, $hotelImage, $selectedHotel["rating"], $selectedHotel["desc"], $selectedHotel["pool"], $selectedHotel["wifi"], $selectedHotel["spa"], $selectedHotel["restaurant"], $selectedHotel["childFriendly"] ,$checkIn, $checkOut, $hotelRate);
       
         $selectedHotelObject = [];
         array_push($selectedHotelObject, $newBooking);
 
-    /*     SaveToJson($newBooking);
-        bookingArray(); */
+        $selectedHotelJson = json_encode($selectedHotelObject);
+        file_put_contents("bookingInfo.json", $selectedHotelJson);
 
         $_SESSION['selectedHotelObject'] = $selectedHotelObject;
 

@@ -41,7 +41,7 @@
     <title>BlueBooking</title>
     <link rel="icon" href="../images/blue-squares.png">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="../css/compare-page.css">
+    <link rel="stylesheet" href="../css/compare.style.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <?php
@@ -64,21 +63,29 @@
                     echo 
                         '<div>
                         <fieldset><legend>Your Booking</legend>
-                            <h3>'.$hotel["hotel"].'</h3>
+                            <h3>'.$hotel["hotel"].' <br> '.$hotel["rating"].'<img class="star" src="../images/star.png"></h3>
+                          
                             <img class="hotel-img" src="' . $hotel["image"] . '">
                             <h4>Description</h4>
                             <p>'.$hotel["description"].'</p>
-                            <h4>Rating:</h4>
-                            <p>'.$hotel["rating"].'/5</p>
-                            <h4>Rate:</h4>
-                            <p>R'.$hotel["rate"].'-00/night</p>
-                            <h4>Your Stay:</h4>
-                            <p>Days: '.$amountOfDays.'</p>
-                            <p>Total Cost: R'.$totalCost.'-00</p>
+                            <div class="stay-info">
+                                <div>
+                                    <h4>Rate:</h4>
+                                    <p>R'.$hotel["rate"].'-00/night</p>
+                                </div>
+                                <div>
+                                    <h4>Your Stay:</h4>
+                                    <p>Days: '.$amountOfDays.'</p>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <h4>Your Total:  R'.$totalCost.'-00 ZAR</h4>
+                            </div>
                             
                             <form action="confirmation.page.php" method="GET" class="confirm">
                                 <input type="submit" name="confirm" value="Confirm Booking" class="confirm-btn">
-                            </form></fieldset>
+                            </form>
+                        </fieldset>
                         </div>';
                 }; 
             ?>
@@ -92,26 +99,66 @@
 
                         echo        
                            '<div>
-                           <fieldset><legend>Alternative Option</legend>
-                                <h3>'.$hotels.'</h3>
-                                <img class="hotel-img" src="' . $value["image"] . '">
-                                <h4>Description</h4>
-                                <p>'.$value["desc"].'</p>
-                                <h4>Rating:</h4>
-                                <p>'.$value["rating"].'/5</p>
-                                <h4>Rate:</h4>
-                                <p>R'.$value["rate"].'-00/night</p>
-                                <h4>Your Stay:</h4>
-                                <p>Days: '.$amountOfDays.'</p>
-                                <p>Total Cost: R'.$totalCosts.'-00</p>
-  
-                                <form action="confirmation.page.php" method="GET" class="confirm">
-                                    <input type="submit" name="confirm" value="Book This Option" class="confirm-btn">
-                                </form></fieldset>
+                                <fieldset><legend>Alternative Option</legend>
+                                        <h3>'.$hotels.' <br> '.$value["rating"].'<img class="star" src="../images/star.png"></h3>                       
+                                    <img class="hotel-img" src="' . $value["image"] . '">
+                                    <h4>Description</h4>
+                                    <p>'.$value["desc"].'</p>
+                                    <div class="stay-info">
+                                        <div>
+                                            <h4>Rate:</h4>
+                                            <p>R'.$value["rate"].'-00/night</p>
+                                        </div>
+                                        <div>
+                                            <h4>Your Stay:</h4>
+                                            <p>'.$amountOfDays.' Nights</p>
+                                        </div>
+                                    </div>
+                                
+                                    <h4 class="total">Total:  R'.$totalCosts.'-00 ZAR</h4>
+                                    <button id="new-book-btn" class="book-btn" onclick="appear()">
+                                        Book an alternative option
+                                    </button>
+                                </fieldset>
                             </div>';
                 }; 
             ?> 
         </div>
+
+
+        <script>
+            function appear(){
+                document.querySelector("#new-book-form").style.display = "block"
+            }
+
+            function disappear(){
+                document.querySelector("#new-book-form").style.display = "none"
+            }
+        </script>
+
+        <fieldset id="new-book-form"class="new-booking">
+            <legend>New Booking</legend>
+            <button class="close" onclick="disappear()">X</button>
+            <form method="GET" action="../pages/confirmation.page.php">
+                
+               
+                <label for="selection" class="selection">
+                    Which new option would you like book:
+                </label>
+                <br>
+                <select name="selection" class="form-select">
+                    <?php
+
+                        foreach ($twoOptions as $hotels => $value){
+                            echo '<option>'.$hotels.'</option>';
+                        };
+                    ?>
+                </select>
+                <br>
+                <input type="submit" name="newHotel" value="Book New Option" class="book-btn">
+            
+            </form>
+        </fieldset>
     </main>
 </body>
 </html>

@@ -65,6 +65,10 @@ h1 span{
     font-size: 1.2em;
 }
 
+.star{
+    width: 1em;
+}
+
 .selected-hotel div h4{
     font-size: 1em;
     text-decoration: underline;
@@ -79,6 +83,10 @@ h1 span{
     width: 100%;
     height: 20%;
     border: solid 2px #185E95;   
+}
+
+.total{
+    color: #185E95;
 }
 
 .option-list{
@@ -128,6 +136,99 @@ h1 span{
     border: solid 2px black;
 }
 
+.new-booking{
+    position: fixed;
+    display: none;
+    width: 90%;
+    left: 5%;
+    top: 40%;
+    z-index: 5;
+    background-color: #f0eded;
+    border: 4px solid #185E95;
+    padding: 0% 3% 5% 3%;
+}
+
+.new-booking legend{
+    font-size: 2em;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    background-color: #f0eded;
+    color: #185E95;
+}
+
+.new-booking .close{
+    position: absolute;
+    right: 1%;
+    margin: 0% 0% 2% 2% ;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #185E95;
+    border: none;
+}
+
+.new-booking form{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    margin-top: 12%;
+}
+
+
+.new-booking form label{
+    font-size: 1.5em;
+}
+
+.new-booking form select{
+    font-size: 1.4em;
+    width: 100%;
+    margin: 5% 0% 4% 0%;
+}
+
+.new-booking form input{
+    width: 50%;
+    font-size: 1.2em;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    border: none;
+    background-color: #185E95;
+    margin-top: 2%;
+}
+
+.book-btn{
+    position: relative;
+    width: 86%;
+    left: 7%;
+    background-color: #185E95;
+    font-size: 1.1em;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    border: none;
+    padding: 3% 2% 3% 2%;
+    box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+}
+
+.book-btn:active{
+    transform: scale(0.9);
+    box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
+}
+
+.confirm{
+    position: relative;
+    width: 80%;
+    left: 20%;
+    margin: 0% 0% 0% 0%;
+    padding: none;
+}
+
+.confirm-btn{
+    background-color: #185E95;
+    font-size: 1.2em;
+    padding: 3% 5% 3% 5%;
+    margin: 0%;
+    border: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+}
+
+.confirm-btn:active{
+    transform: scale(0.9);
+    box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
+}
 
 @media (min-width: 490px) and (max-height: 490px){
 
@@ -245,6 +346,48 @@ h1 span{
         height: 20%;
         border: solid 2px black;
     }
+
+    .new-booking{
+        position: absolute;
+        display: none;
+        width: 70%;
+        left: 15%;
+        top: 40%;
+        z-index: 5;
+        background-color: #f0eded;
+        border: 4px solid #185E95;
+        padding: 2% 2% 2% 2%;
+    }
+
+    .new-booking legend{
+        font-size: 2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        background-color: #f0eded;
+        color: #185E95;
+    }
+
+    .new-booking form{
+        font-family: 'Kdam Thmor Pro', sans-serif;
+    }
+
+    .new-booking form label{
+        font-size: 1.5em;
+    }
+
+    .new-booking form select{
+        font-size: 1.3em;
+        width: 100%;
+        margin: 3% 0% 2% 0%;
+    }
+
+    .new-booking form input{
+        width: 50%;
+        font-size: 1.2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        border: none;
+        background-color: #185E95;
+        margin-top: 2%;
+    }
 }
 
 
@@ -268,7 +411,7 @@ h1 span{
     .selected-hotel{
         position: absolute;
         width: 34%;
-        left: 2.5%;
+        left: 1%;
         top: 10%;
         margin-top: 0%;
         padding: 5% 2% 5% 2%;
@@ -313,11 +456,16 @@ h1 span{
         height: 20%;
         border: solid 2px #185E95;   
     }
+
+    .selected-hotel .total h4{
+        font-size: 1em;
+    }
     
     .option-list{
         position: absolute;
         width: 66%;
         left: 34%;
+        top: 10%;
         padding: 5% 2% 5% 2%;
         display: grid;
         grid-template-columns: 50% 50%;
@@ -361,6 +509,100 @@ h1 span{
         width: 100%;
         height: 20%;
         border: solid 2px black;
+    }
+
+    .new-booking{
+        position: absolute;
+        display: none;
+        width: 70%;
+        left: 15%;
+        top: 40%;
+        z-index: 5;
+        background-color: #f0eded;
+        border: 4px solid #185E95;
+        padding: 0% 2% 2% 2%;
+    }
+
+    .new-booking legend{
+        font-size: 2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        background-color: #f0eded;
+        color: #185E95;
+    }
+
+    .new-booking .close{
+        position: absolute;
+        top: 0%;
+        right: 1%;
+        margin: 0% 0% 0% 2% ;
+        font-size: 2em;
+        font-weight: 700;
+        color: #185E95;
+        border: none;
+    }
+
+    .new-booking form{
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        margin-top: 5%;
+    }
+
+    .new-booking form label{
+        font-size: 1.5em;
+    }
+
+    .new-booking form select{
+        font-size: 1.3em;
+        width: 100%;
+        margin: 3% 0% 2% 0%;
+    }
+
+    .new-booking form input{
+        width: 50%;
+        font-size: 1.2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        border: none;
+        background-color: #185E95;
+        margin-top: 2%;
+    }
+
+    .book-btn{
+        position: relative;
+        width: 86%;
+        left: 7%;
+        background-color: #185E95;
+        font-size: 0.8em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        border: none;
+        padding: 3% 2% 3% 2%;
+        box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+    }
+
+    .book-btn:active{
+        transform: scale(0.9);
+        box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
+    }
+
+    .confirm{
+        position: relative;
+        width: 80%;
+        left: 10%;
+        margin: 0% 2% 0% 5%;
+        padding: none;
+    }
+    
+    .confirm-btn{
+        background-color: #185E95;
+        font-size: 1em;
+        padding: 3% 5% 3% 5%;
+        margin: 0%;
+        border: none;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+    }
+    
+    .confirm-btn:active{
+        transform: scale(0.9);
+        box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
     }
 
 }
@@ -387,11 +629,10 @@ h1 span{
 
     .selected-hotel{
         position: absolute;
-        width: 34%;
-        margin-top: 0%;
+        width: 33%;
         top: 10%;
         left: 1%;
-        padding: 5% 2% 5% 2%;
+        padding: 5% 1% 5% 1%;
     }
 
     .selected-hotel fieldset{
@@ -414,6 +655,17 @@ h1 span{
         font-family: 'Kdam Thmor Pro', sans-serif;
     }
 
+    .star{
+        position: relative;
+        margin-left: 6%;
+        width: 1em;
+    }
+
+    .rating{
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+
     .selected-hotel div h3{
         font-size: 1.2em;
     }
@@ -427,22 +679,37 @@ h1 span{
         font-size: 1em;
     }
 
-    .selected-hotel .hotel-img{
+    .hotel-img{
         position: relative;
         width: 100%;
         height: 20%;
         border: solid 2px #185E95;   
     }
 
-    .option-list{
-        position: absolute;
-        top: 10%;
-        right: 1%;
-        left: 34%;
-        width: 66%;
+    .stay-info{
+        position: relative;
         display: grid;
         grid-template-columns: 50% 50%;
-        padding: 5% 2% 5% 2%;
+    }
+
+    .selected-hotel .total h4{
+        font-size: 0.8em;
+    }
+
+    .total {
+        font-size: 1.2em;
+        color: #185E95;
+        text-align: center;
+    }
+
+    .option-list{
+        position: absolute;
+        right: 1%;
+        width: 70%;
+        top: 10%;
+        margin-top: 0%;
+        display: flex;
+        padding: 5% 1% 5% 1%;
     }
 
     .option-list fieldset{
@@ -461,6 +728,7 @@ h1 span{
 
     .option-list div{
         position: relative;
+        width: 50%;
         margin: 0% 2% 0% 2%;
         font-family: 'Kdam Thmor Pro', sans-serif;
     }
@@ -483,6 +751,88 @@ h1 span{
         width: 100%;
         height: 20%;
         border: solid 2px black;
+    }
+
+    .new-booking{
+        position: absolute;
+        display: none;
+        width: 50%;
+        left: 25%;
+        top: 40%;
+        z-index: 5;
+        background-color: #f0eded;
+        border: 4px solid #185E95;
+        padding: 2% 2% 2% 2%;
+    }
+
+    .new-booking legend{
+        font-size: 2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        background-color: #f0eded;
+        color: #185E95;
+    }
+
+    .new-booking form{
+        font-family: 'Kdam Thmor Pro', sans-serif;
+    }
+
+    .new-booking form label{
+        font-size: 1.5em;
+    }
+
+    .new-booking form select{
+        font-size: 1.3em;
+        width: 100%;
+        margin: 3% 0% 2% 0%;
+    }
+
+    .new-booking form input{
+        width: 50%;
+        font-size: 1.2em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        border: none;
+        background-color: #185E95;
+        margin-top: 2%;
+    }
+
+    .book-btn{
+        position: relative;
+        width: 80%;
+        left: 10%;
+        background-color: #185E95;
+        font-size: 1em;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        border: none;
+        padding: 2% 2% 2% 2%;
+        box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+    }
+
+    .book-btn:active{
+        transform: scale(0.9);
+        box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
+    }
+
+    .confirm{
+        position: relative;
+        width: 70%;
+        left: 15%;
+        margin: 0% 2% 0% 5%;
+        padding: none;
+    }
+    
+    .confirm-btn{
+        background-color: #185E95;
+        font-size: 1em;
+        padding: 3% 5% 3% 5%;
+        margin: 0%;
+        border: none;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        box-shadow: rgb(91, 91, 91) 5px 5px 7px 0px;
+    }
+    
+    .confirm-btn:active{
+        transform: scale(0.9);
+        box-shadow: 3px 3px 4.5px 0px rgb(75, 74, 74);
     }
 
 }

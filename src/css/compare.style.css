@@ -689,6 +689,7 @@ h1 span{
     .stay-info{
         position: relative;
         display: grid;
+        width: 100%;
         grid-template-columns: 50% 50%;
     }
 
@@ -751,6 +752,13 @@ h1 span{
         width: 100%;
         height: 20%;
         border: solid 2px black;
+    }
+
+    .option-list .stay-info{
+        position: relative;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 50% 50%;
     }
 
     .new-booking{
